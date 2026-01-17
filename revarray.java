@@ -1,4 +1,4 @@
-class Main {
+class revarray {
     public static void main(String[] args) {
         int k = 0;
         char[] arr = new char[6];
