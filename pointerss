@@ -1,0 +1,7 @@
+1) Security – Pointers allow direct access to memory addresses, which can cause unauthorized memory access and security issues. Java avoids this to maintain a secure environment.
+
+2) Simplicity – Pointer usage involves complex operations like dereferencing and address manipulation. Java eliminates pointers to keep the language simple.
+
+3) Automatic Memory Management – Java uses garbage collection for automatic memory allocation and deallocation, so pointers are not required.
+
+4) Object References – Java uses references instead of pointers. References do not expose memory addresses, preventing misuse.
