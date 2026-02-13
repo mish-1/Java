@@ -1,69 +1,60 @@
 import java.util.ArrayList;
-
 class Book {
     String title;
     String author;
     String isbn;
 
-    Book(String title, String author, String isbn) {
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
+    Book(String t, String a, String i) {
+        title = t;
+        author = a;
+        isbn = i;
     }
 }
-
 class Library {
-    ArrayList<Book> books = new ArrayList<>();
-
-    void addBook(Book book) {
-        books.add(book);
+    ArrayList<Book> list = new ArrayList<>();
+    void addBook(Book b) {
+        list.add(b);
     }
+    void searchByTitle(String name) {
+        boolean found = false;
 
-    Book searchByTitle(String title) {
-        for (Book b : books) {
-            if (b.title.equalsIgnoreCase(title)) {
-                return b;
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).title.equals(name)) {
+                System.out.println("Book Found:");
+                System.out.println(list.get(i).title);
+                System.out.println(list.get(i).author);
+                System.out.println(list.get(i).isbn);
+                found = true;
             }
         }
-        return null;
+
+        if (!found) {
+            System.out.println("Book not found");
+        }
     }
 
-    void displayAllBooks() {
-        for (Book b : books) {
-            System.out.println("Title: " + b.title);
-            System.out.println("Author: " + b.author);
-            System.out.println("ISBN: " + b.isbn);
-            System.out.println();
+    void displayAll() {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).title);
+            System.out.println(list.get(i).author);
+            System.out.println(list.get(i).isbn);
+            System.out.println("----------------");
         }
     }
 }
 
-public class librarymanagement {
+public class hw9 {
     public static void main(String[] args) {
 
-        Library library = new Library();
+        Library lib = new Library();
 
         Book b1 = new Book("Java", "James", "101");
-        Book b2 = new Book("DSA", "Mark", "102");
-        Book b3 = new Book("OS", "Galvin", "103");
+        Book b2 = new Book("Python", "Guido", "102");
 
-        library.addBook(b1);
-        library.addBook(b2);
-        library.addBook(b3);
+        lib.addBook(b1);
+        lib.addBook(b2);
 
-        System.out.println("All Books:");
-        library.displayAllBooks();
-
-        System.out.println("Searching for DSA...");
-        Book result = library.searchByTitle("DSA");
-
-        if (result != null) {
-            System.out.println("Book Found:");
-            System.out.println("Title: " + result.title);
-            System.out.println("Author: " + result.author);
-            System.out.println("ISBN: " + result.isbn);
-        } else {
-            System.out.println("Book not found.");
-        }
+        lib.displayAll();
+        lib.searchByTitle("Java");
     }
 }
