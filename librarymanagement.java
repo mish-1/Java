@@ -43,7 +43,7 @@ class Library {
     }
 }
 
-public class hw9 {
+public class librarymanagement {
     public static void main(String[] args) {
 
         Library lib = new Library();

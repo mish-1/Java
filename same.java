@@ -9,7 +9,7 @@ class same{
     }
 
     public static void main(String[] args) {
-        Main obj = new Main();
+        same obj = new same();
         obj.add(10, 20);
         obj.add(2.5, 3.5);
     }
